@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXORA | A Digital World of Ideas</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            border-bottom: 1px solid #292929;
+        }
+
+        .logo {
+            font-size: 28px;
+            letter-spacing: 4px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        .hero {
+            padding: 100px 8%;
+            background: linear-gradient(90deg, #0b0b0b, #242424);
+        }
+
+        .hero h1 {
+            font-size: 65px;
+            max-width: 750px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #bbbbbb;
+            font-size: 18px;
+            max-width: 500px;
+            line-height: 1.7;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 30px;
+            background: #c5a059;
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 60px 8%;
+        }
+
+        .section h2 {
+            font-size: 32px;
+        }
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .article {
+            background: #171717;
+            padding: 25px;
+            border: 1px solid #303030;
+        }
+
+        .article h3 {
+            font-size: 22px;
+        }
+
+        .article p {
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 30px 8%;
+            border-top: 1px solid #292929;
+            color: #888888;
+        }
+
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav a {
+                margin: 8px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .articles {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">NEXORA.</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>A DIGITAL WORLD OF IDEAS.</h1>
+
+        <p>
+            Discover stories, technology, business, creativity
+            and perspectives shaping the world around us.
+        </p>
+
+        <a href="#discover" class="button">EXPLORE NEXORA</a>
+    </section>
+
+    <section class="section" id="discover">
+        <h2>Explore Our World</h2>
+
+        <div class="articles">
+
+            <div class="article">
+                <h3>Technology</h3>
+                <p>
+                    Discover new ideas, innovations and the technology
+                    transforming our world.
+                </p>
+            </div>
+
+            <div class="article">
+                <h3>Business</h3>
+                <p>
+                    Explore entrepreneurship, leadership, business
+                    ideas and ambition.
+                </p>
+            </div>
+
+            <div class="article">
+                <h3>Ideas & Culture</h3>
+                <p>
+                    Stories, creativity and perspectives
+                    that inspire new ways of thinking.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About NEXORA</h2>
+
+        <p style="color: #aaaaaa; line-height: 1.8;">
+            NEXORA is a digital platform dedicated to ideas,
+            knowledge, creativity and discovery.
+            This is where curiosity meets possibility.
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2026 NEXORA. All rights reserved.
+    </footer>
+
+</body>
+</html>
