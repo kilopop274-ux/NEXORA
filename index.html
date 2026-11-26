@@ -4,311 +4,236 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA | A World of Ideas</title>
-
+<title>NEXORA | Ideas. Knowledge. Possibilities.</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,sans-serif;
+  background:#10121a;
+  color:#f4f2ed;
+  line-height:1.6;
 }
-
-body {
-    background: #10121a;
-    color: #f5f2eb;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+header{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 8%;border-bottom:1px solid #292b35;
+  background:#10121a;position:sticky;top:0;z-index:10;
 }
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 25px 8%;
-    border-bottom: 1px solid #292b34;
+.logo{font-size:27px;font-weight:bold;letter-spacing:4px;color:#dfbd78}
+nav a{color:#eee;text-decoration:none;margin-left:22px;font-size:14px}
+nav a:hover{color:#dfbd78}
+.hero{padding:100px 8% 85px;text-align:center}
+.hero small{color:#dfbd78;letter-spacing:3px}
+.hero h1{font-size:clamp(38px,6vw,68px);margin:20px 0}
+.hero p{max-width:650px;margin:auto;color:#b9bbc5;font-size:17px}
+.btn{
+ display:inline-block;margin-top:28px;padding:13px 25px;
+ background:#dfbd78;color:#10121a;text-decoration:none;
+ border-radius:4px;font-weight:bold;
 }
-
-.logo {
-    color: #dfbd78;
-    font-size: 27px;
-    font-weight: bold;
-    letter-spacing: 3px;
+section{padding:65px 8%}
+.section-title{font-size:30px;margin-bottom:10px}
+.section-intro{color:#aeb0bb;margin-bottom:30px}
+.categories{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+ gap:15px;margin-top:28px
 }
-
-nav a {
-    color: #eee;
-    text-decoration: none;
-    margin-left: 22px;
-    font-size: 14px;
+.category{
+ background:#191c27;border:1px solid #303341;padding:23px;
+ border-radius:8px;text-align:center;color:#dfbd78;
+ font-weight:bold
 }
-
-nav a:hover {
-    color: #dfbd78;
+.category span{display:block;color:#aeb0bb;font-size:13px;font-weight:normal;margin-top:7px}
+.discover{background:#151722}
+.search{
+ width:100%;max-width:600px;padding:15px;border-radius:5px;
+ border:1px solid #444653;background:#20232f;color:white;
+ font-size:15px;margin:20px 0 25px
 }
-
-.hero {
-    text-align: center;
-    padding: 110px 20px;
-    background: radial-gradient(circle, #292536, #10121a 70%);
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.filters button{
+ padding:10px 17px;background:#20232f;border:1px solid #444653;
+ color:#eee;border-radius:20px;cursor:pointer
 }
-
-.tag {
-    color: #dfbd78;
-    letter-spacing: 3px;
-    font-size: 12px;
+.filters button.active,.filters button:hover{
+ background:#dfbd78;color:#10121a;border-color:#dfbd78
 }
-
-.hero h1 {
-    font-size: clamp(38px, 7vw, 70px);
-    margin: 20px 0;
-    color: #f0d49b;
-    line-height: 1.15;
+.articles{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:20px
 }
-
-.hero p {
-    color: #c4c3ca;
-    max-width: 600px;
-    margin: 0 auto 30px;
+.article{
+ background:#20232f;border:1px solid #343746;border-radius:8px;
+ padding:24px;min-height:210px
 }
-
-.button {
-    display: inline-block;
-    background: #dfbd78;
-    color: #171717;
-    padding: 13px 28px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+.article small{color:#dfbd78;text-transform:uppercase;letter-spacing:1px}
+.article h3{margin:15px 0 10px;font-size:20px}
+.article p{color:#b9bbc5;font-size:14px}
+.article .coming{display:inline-block;margin-top:17px;color:#dfbd78;font-size:12px}
+.empty{color:#b9bbc5;padding:20px;display:none}
+.about{max-width:800px}
+.about p{color:#b9bbc5;margin-top:15px}
+.join{
+ text-align:center;background:#191c27;padding:65px 8%
 }
-
-section {
-    padding: 75px 8%;
+footer{
+ padding:30px 8%;text-align:center;color:#858895;
+ border-top:1px solid #292b35;font-size:13px
 }
-
-.section-title {
-    text-align: center;
-    font-size: 32px;
-    margin-bottom: 12px;
-}
-
-.section-intro {
-    text-align: center;
-    color: #aaaab4;
-    margin-bottom: 40px;
-}
-
-.categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-    gap: 20px;
-}
-
-.category {
-    background: #1c1f29;
-    padding: 30px 22px;
-    border: 1px solid #30323d;
-    border-radius: 9px;
-    transition: 0.3s;
-}
-
-.category:hover {
-    border-color: #dfbd78;
-    transform: translateY(-5px);
-}
-
-.category h3 {
-    color: #dfbd78;
-    margin-bottom: 12px;
-}
-
-.category p {
-    color: #b6b6c0;
-    font-size: 14px;
-}
-
-.discover {
-    background: #171923;
-    text-align: center;
-}
-
-.discover p {
-    color: #c0bfca;
-    max-width: 650px;
-    margin: 15px auto 25px;
-}
-
-.about {
-    text-align: center;
-}
-
-.about p {
-    max-width: 700px;
-    margin: 15px auto;
-    color: #bdbdc6;
-}
-
-.community {
-    background: #242332;
-    text-align: center;
-}
-
-.community h2 {
-    color: #f0d49b;
-    margin-bottom: 15px;
-}
-
-.community p {
-    color: #c7c5d0;
-    margin-bottom: 25px;
-}
-
-footer {
-    text-align: center;
-    padding: 30px 15px;
-    color: #9999a4;
-    border-top: 1px solid #30323d;
-    font-size: 13px;
-}
-
-footer span {
-    color: #dfbd78;
-}
-
-@media(max-width: 600px) {
-    header {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    nav a {
-        margin: 0 8px;
-        font-size: 12px;
-    }
-
-    .hero {
-        padding: 75px 18px;
-    }
+@media(max-width:600px){
+ header{padding:18px 5%;flex-direction:column;gap:12px}
+ nav a{margin:0 8px}
+ section{padding:50px 6%}
+ .hero{padding:75px 6%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
-    <div class="logo">NEXORA.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#discover">Discover</a>
-        <a href="#about">About</a>
-    </nav>
+  <div class="logo">NEXORA</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#discover">Discover</a>
+    <a href="#about">About</a>
+  </nav>
 </header>
 
 <main>
-
 <section class="hero" id="home">
-    <div class="tag">A WORLD OF IDEAS</div>
-
-    <h1>Ideas. Knowledge.<br>Possibilities.</h1>
-
-    <p>
-        Welcome to Nexora, a digital space for curious minds,
-        creative thinkers and people from every corner of the world.
-        Discover ideas, explore knowledge and embrace possibilities.
-    </p>
-
-    <a href="#discover" class="button">Explore Nexora</a>
+  <small>WELCOME TO NEXORA</small>
+  <h1>Ideas. Knowledge. Possibilities.</h1>
+  <p>A global space for discovering ideas, sharing knowledge,
+  exploring creativity and connecting through information.</p>
+  <a class="btn" href="#discover">Explore NEXORA</a>
 </section>
 
-<section id="discover">
-    <h2 class="section-title">Explore Our World</h2>
-
-    <p class="section-intro">
-        Discover different worlds of knowledge and creativity.
-    </p>
-
-    <div class="categories">
-
-        <div class="category">
-            <h3>Technology</h3>
-            <p>
-                Explore innovation, artificial intelligence,
-                digital trends and the future of technology.
-            </p>
-        </div>
-
-        <div class="category">
-            <h3>Business</h3>
-            <p>
-                Discover entrepreneurship, business ideas,
-                opportunities and economic insights.
-            </p>
-        </div>
-
-        <div class="category">
-            <h3>Creativity</h3>
-            <p>
-                Explore writing, art, imagination,
-                design and creative expression.
-            </p>
-        </div>
-
-        <div class="category">
-            <h3>Knowledge</h3>
-            <p>
-                Learn about education, discoveries,
-                science and fascinating ideas.
-            </p>
-        </div>
-
-    </div>
+<section>
+  <h2 class="section-title">Explore Our World</h2>
+  <p class="section-intro">Discover different fields of knowledge and creativity.</p>
+  <div class="categories">
+    <div class="category">Technology<span>Innovation and digital discoveries</span></div>
+    <div class="category">Business<span>Enterprise and new ideas</span></div>
+    <div class="category">Creativity<span>Art, writing and imagination</span></div>
+    <div class="category">Knowledge<span>Learning and discovery</span></div>
+    <div class="category">Lifestyle<span>Ideas for everyday living</span></div>
+  </div>
 </section>
 
-<section class="discover">
-    <h2 class="section-title">Discover Something New</h2>
+<section class="discover" id="discover">
+  <h2 class="section-title">Discover Something New</h2>
+  <p class="section-intro">Explore the ideas and stories featured on NEXORA.</p>
 
-    <p>
-        The world is full of ideas waiting to be explored.
-        Nexora is being developed to bring information,
-        creativity and useful digital experiences together.
-    </p>
+  <input class="search" id="searchInput" type="search"
+  placeholder="Search articles or topics..." aria-label="Search articles">
 
-    <a href="#about" class="button">Learn About Us</a>
+  <div class="filters">
+    <button class="active" data-category="All">All</button>
+    <button data-category="Technology">Technology</button>
+    <button data-category="Business">Business</button>
+    <button data-category="Creativity">Creativity</button>
+    <button data-category="Knowledge">Knowledge</button>
+    <button data-category="Lifestyle">Lifestyle</button>
+  </div>
+
+  <div class="articles" id="articleList">
+    <article class="article" data-category="Technology">
+      <small>Technology</small>
+      <h3>The Future of Digital Innovation</h3>
+      <p>Explore how new technologies are changing the way people learn, create and communicate.</p>
+      <span class="coming">Featured topic · Article coming soon</span>
+    </article>
+
+    <article class="article" data-category="Business">
+      <small>Business</small>
+      <h3>Turning Ideas Into Opportunities</h3>
+      <p>Discover the importance of creativity, planning and problem-solving in business.</p>
+      <span class="coming">Featured topic · Article coming soon</span>
+    </article>
+
+    <article class="article" data-category="Creativity">
+      <small>Creativity</small>
+      <h3>The Power of Creative Expression</h3>
+      <p>A look at how art, writing and imagination give people new ways to express ideas.</p>
+      <span class="coming">Featured topic · Article coming soon</span>
+    </article>
+
+    <article class="article" data-category="Knowledge">
+      <small>Knowledge</small>
+      <h3>Curiosity: The Beginning of Discovery</h3>
+      <p>Why asking questions and exploring the world are important parts of learning.</p>
+      <span class="coming">Featured topic · Article coming soon</span>
+    </article>
+
+    <article class="article" data-category="Lifestyle">
+      <small>Lifestyle</small>
+      <h3>Ideas for a More Creative Everyday Life</h3>
+      <p>Explore simple ways to bring curiosity and creativity into everyday experiences.</p>
+      <span class="coming">Featured topic · Article coming soon</span>
+    </article>
+  </div>
+  <p class="empty" id="emptyMessage">No matching articles found.</p>
 </section>
 
 <section class="about" id="about">
-    <h2 class="section-title">About Nexora</h2>
-
-    <p>
-        Nexora is an independent digital platform built
-        around ideas, knowledge, creativity and discovery.
-    </p>
-
-    <p>
-        Our vision is to create a global space where people
-        can explore information, share perspectives and
-        discover new possibilities.
-    </p>
+  <h2 class="section-title">About NEXORA</h2>
+  <p>NEXORA is a global digital platform built around ideas,
+  information, creativity and knowledge.</p>
+  <p>Our vision is to create a space where people can discover
+  useful information, share perspectives and explore new possibilities.</p>
 </section>
 
-<section class="community">
-    <h2>Be Part of the Nexora Journey</h2>
-
-    <p>
-        A world of ideas is better when everyone
-        has an opportunity to contribute.
-    </p>
-
-    <a href="#about" class="button">Discover Nexora</a>
+<section class="join">
+  <h2 class="section-title">Be Part of the NEXORA Journey</h2>
+  <p class="section-intro">A platform for ideas, knowledge and possibilities.</p>
+  <a class="btn" href="#discover">Explore the Platform</a>
 </section>
-
 </main>
 
 <footer>
-    <p><span>NEXORA.</span> | A World of Ideas</p>
-    <p>© 2026 Nexora. All rights reserved.</p>
+  © 2026 NEXORA. All rights reserved.
+  <p>Ideas. Knowledge. Possibilities.</p>
 </footer>
+
+<script>
+const searchInput = document.getElementById("searchInput");
+const buttons = document.querySelectorAll(".filters button");
+const articles = document.querySelectorAll(".article");
+const emptyMessage = document.getElementById("emptyMessage");
+
+let selectedCategory = "All";
+
+function filterArticles() {
+  const searchText = searchInput.value.toLowerCase();
+  let visibleCount = 0;
+
+  articles.forEach(article => {
+    const category = article.dataset.category;
+    const text = article.textContent.toLowerCase();
+
+    const categoryMatch =
+      selectedCategory === "All" || category === selectedCategory;
+    const searchMatch = text.includes(searchText);
+    const visible = categoryMatch && searchMatch;
+
+    article.style.display = visible ? "block" : "none";
+    if (visible) visibleCount++;
+  });
+
+  emptyMessage.style.display = visibleCount === 0 ? "block" : "none";
+}
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedCategory = button.dataset.category;
+    buttons.forEach(item => item.classList.remove("active"));
+    button.classList.add("active");
+    filterArticles();
+  });
+});
+
+searchInput.addEventListener("input", filterArticles);
+</script>
 
 </body>
 </html>
