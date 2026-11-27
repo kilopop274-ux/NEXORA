@@ -244,6 +244,13 @@
       showLoggedInUser(data.user);
       showMessage("Welcome back!");
     });
+      if (error) {
+    showMessage(error.message, "#ff8080");
+    return;
+  }
+
+  showMessage("Password recovery email sent!");
+});
 
     document.getElementById("logoutBtn").addEventListener("click", async () => {
       const { error } = await client.auth.signOut();
@@ -270,15 +277,6 @@
 
   const { error } = await client.auth.resetPasswordForEmail(email, {
     redirectTo: "https://kilopop274-ux.github.io/NEXORA/account.html"
-  });
-
-  if (error) {
-    showMessage(error.message, "#ff8080");
-    return;
-  }
-
-  showMessage("Password recovery email sent!");
-});
     document.getElementById("forgotPassword").addEventListener("click", async (event) => {
   event.preventDefault();
 
@@ -289,36 +287,8 @@
     return;
   }
 
+  showMessage("Sending recovery email...");
+
   const { error } = await client.auth.resetPasswordForEmail(email, {
     redirectTo: "https://kilopop274-ux.github.io/NEXORA/account.html"
   });
-
-  if (error) {
-    showMessage(error.message, "#ff8080");
-    return;
-  }
-
-  showMessage("Password recovery email sent!");
-});
-
-    client.auth.onAuthStateChange((event, session) => {
-      if (session && session.user) {
-        showLoggedInUser(session.user);
-      } else {
-        showLoggedOut();
-      }
-    });
-
-    async function checkSession() {
-      const { data } = await client.auth.getSession();
-
-      if (data.session) {
-        showLoggedInUser(data.session.user);
-      }
-    }
-
-    checkSession();
-  </script>
-
-</body>
-</html>
