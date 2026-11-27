@@ -253,6 +253,27 @@
       showLoggedOut();
       showMessage("You have logged out.");
     });
+    document.getElementById("forgotPassword").addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  const email = document.getElementById("email").value.trim();
+
+  if (!email) {
+    showMessage("Enter your email address first.", "#ff8080");
+    return;
+  }
+
+  const { error } = await client.auth.resetPasswordForEmail(email, {
+    redirectTo: "https://kilopop274-ux.github.io/NEXORA/account.html"
+  });
+
+  if (error) {
+    showMessage(error.message, "#ff8080");
+    return;
+  }
+
+  showMessage("Password recovery email sent!");
+});
 
     client.auth.onAuthStateChange((event, session) => {
       if (session && session.user) {
