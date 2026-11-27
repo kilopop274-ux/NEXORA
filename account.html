@@ -227,8 +227,11 @@
 
       const { data, error } = await client.auth.signInWithPassword({
         email: email,
-        password: password
+      password: password
       });
+
+      if (error) {
+        
 
       if (error) {
         showMessage(error.message, "#ff8080");
