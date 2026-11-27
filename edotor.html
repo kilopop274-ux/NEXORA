@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Editorial Desk</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#10121a;color:#f4f2ed;font-family:Arial,sans-serif;
+  min-height:100vh;
+}
+header{
+  padding:22px 6%;border-bottom:1px solid #292b35;
+  display:flex;justify-content:space-between;align-items:center;
+}
+.logo{font-size:25px;letter-spacing:4px;color:#dfbd78;font-weight:bold}
+header span{color:#aeb0bb;font-size:13px}
+.layout{display:flex;min-height:calc(100vh - 75px)}
+.sidebar{
+  width:230px;padding:30px 20px;border-right:1px solid #292b35;
+}
+.sidebar h3{font-size:12px;color:#858895;margin-bottom:20px}
+.nav-item{
+  padding:13px;border-radius:6px;margin-bottom:8px;
+  color:#aeb0bb;cursor:pointer;
+}
+.nav-item.active{background:#252836;color:#dfbd78}
+.main{flex:1;padding:35px;max-width:1100px}
+h1{font-size:28px;margin-bottom:10px}
+.subtitle{color:#aeb0bb;margin-bottom:30px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:30px}
+.stat{
+  background:#191c27;border:1px solid #343746;
+  padding:22px;border-radius:9px;
+}
+.stat small{color:#aeb0bb}
+.stat h2{font-size:30px;margin-top:12px}
+.panel{
+  background:#191c27;border:1px solid #343746;
+  border-radius:9px;padding:24px;margin-bottom:25px;
+}
+.panel h2{font-size:20px;margin-bottom:18px}
+.article{
+  padding:18px 0;border-top:1px solid #343746;
+}
+.article h3{font-size:16px;margin-bottom:8px}
+.article p{font-size:13px;color:#aeb0bb;line-height:1.6}
+.status{
+  display:inline-block;padding:6px 10px;border-radius:20px;
+  font-size:12px;margin-top:12px;background:#292b35;color:#dfbd78;
+}
+.empty{color:#858895;font-size:14px;padding:15px 0}
+.note{
+  font-size:12px;color:#858895;line-height:1.6;
+  border-top:1px solid #343746;padding-top:20px;
+}
+@media(max-width:750px){
+  .layout{display:block}
+  .sidebar{width:100%;border-right:0;border-bottom:1px solid #292b35}
+  .main{padding:22px}
+  .stats{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NEXORA</div>
+  <span>Editorial Desk · Prototype</span>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+  <h3>EDITORIAL</h3>
+  <div class="nav-item active">Overview</div>
+  <div class="nav-item">Pending submissions</div>
+  <div class="nav-item">Approved articles</div>
+  <div class="nav-item">Rejected articles</div>
+  <div class="nav-item">Editorial guidelines</div>
+</aside>
+
+<main class="main">
+  <h1>Editorial Desk</h1>
+  <p class="subtitle">Review, organise and prepare contributions for NEXORA.</p>
+
+  <div class="stats">
+    <div class="stat">
+      <small>Pending</small>
+      <h2>0</h2>
+    </div>
+    <div class="stat">
+      <small>Approved</small>
+      <h2>0</h2>
+    </div>
+    <div class="stat">
+      <small>Rejected</small>
+      <h2>0</h2>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>Pending submissions</h2>
+    <div class="empty">No submissions to review yet.</div>
+  </section>
+
+  <section class="panel">
+    <h2>Recently approved</h2>
+    <div class="empty">Approved articles will appear here.</div>
+  </section>
+
+  <section class="panel">
+    <h2>Recently rejected</h2>
+    <div class="empty">Rejected articles will appear here.</div>
+  </section>
+
+  <section class="panel">
+    <h2>Editorial note</h2>
+    <p class="note">
+      This is a visual prototype. Article review, approval, rejection
+      and publication actions are not connected. Editorial access
+      requires server-side authorisation.
+    </p>
+  </section>
+</main>
+</div>
+
+</body>
+</html>
