@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEXORA | Submit an Article</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:#10121a;color:#f4f2ed;font-family:Arial,sans-serif;
+  min-height:100vh;
+}
+header{
+  padding:22px 8%;border-bottom:1px solid #292b35;
+}
+.logo{font-size:27px;letter-spacing:4px;font-weight:bold;color:#dfbd78}
+main{max-width:850px;margin:45px auto;padding:0 20px}
+h1{font-size:30px;margin-bottom:12px}
+.intro{color:#aeb0bb;line-height:1.7;margin-bottom:30px}
+.card{
+  background:#191c27;border:1px solid #343746;
+  border-radius:10px;padding:32px;
+}
+label{display:block;font-size:14px;margin:20px 0 9px}
+input,select,textarea{
+  width:100%;padding:14px;border:1px solid #444653;
+  border-radius:5px;background:#20232f;color:#f4f2ed;
+  font-family:Arial,sans-serif;font-size:14px;
+}
+textarea{min-height:130px;resize:vertical;line-height:1.6}
+#content{min-height:300px}
+input:focus,select:focus,textarea:focus{
+  outline:1px solid #dfbd78;border-color:#dfbd78;
+}
+.help{font-size:12px;color:#858895;margin-top:7px}
+button{
+  width:100%;padding:15px;border:0;border-radius:5px;
+  background:#dfbd78;color:#10121a;font-weight:bold;
+  margin-top:25px;cursor:pointer;font-size:15px;
+}
+button:hover{opacity:.9}
+.notice{
+  margin-top:20px;padding:15px;background:#252836;
+  border-radius:6px;color:#c2c3cb;font-size:12px;line-height:1.7;
+}
+footer{text-align:center;padding:30px;color:#858895;font-size:13px}
+@media(max-width:600px){
+  .card{padding:22px}
+  main{margin:30px auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">NEXORA</div>
+</header>
+
+<main>
+  <h1>Share Your Ideas</h1>
+  <p class="intro">
+    Every meaningful idea deserves a voice.
+    Submit your article for consideration by the NEXORA editorial team.
+  </p>
+
+  <div class="card">
+    <form id="articleForm">
+
+      <label for="title">Article title</label>
+      <input id="title" type="text" maxlength="200"
+        placeholder="Give your article a title" required>
+
+      <label for="category">Choose a category</label>
+      <select id="category" required>
+        <option value="">Select a category</option>
+        <option>Technology</option>
+        <option>Business</option>
+        <option>Creativity</option>
+        <option>Knowledge</option>
+        <option>Lifestyle</option>
+      </select>
+
+      <label for="excerpt">Short summary</label>
+      <textarea id="excerpt" maxlength="500"
+        placeholder="Briefly introduce your article"></textarea>
+      <p class="help">Maximum 500 characters.</p>
+
+      <label for="content">Your article</label>
+      <textarea id="content"
+        placeholder="Start writing your article here..." required></textarea>
+
+      <button type="submit">Submit for Review</button>
+
+    </form>
+
+    <div class="notice">
+      <strong>Submission information</strong><br>
+      Articles will be reviewed by the NEXORA editorial team.
+      Submitting an article does not guarantee publication.
+      This page is currently a design preview and does not send or save submissions.
+    </div>
+  </div>
+</main>
+
+<footer>© 2026 NEXORA · Ideas. Knowledge. Possibilities.</footer>
+
+<script>
+document.getElementById("articleForm").onsubmit=function(event){
+  event.preventDefault();
+  alert("This is a design preview. Article submission is not connected yet.");
+};
+</script>
+
+</body>
+</html>
